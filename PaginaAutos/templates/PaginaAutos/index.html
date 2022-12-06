@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Crispy Kitchen - Bootstrap 5 HTML Template</title>
+        <title>Cars Library</title>
 
         <!-- CSS FILES -->    
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,109 +39,79 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
-                <a class="navbar-brand" href="index.html">
-                    Crispy Kitchen
+                <a class="navbar-brand" href="{% url 'autos-inicio' %}">
+                    Cars Library
                 </a>
 
-                <div class="d-lg-none">
-                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Reservation</button>
-                </div>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
+
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
+                            <a class="nav-link" href="{% url 'autos-modelos' %}">Autos</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">Story</a>
+                            <a class="nav-link" href="{% url 'autos-motores' %}">Motores</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="menu.html">Menu</a>
+                            <a class="nav-link" href="{% url 'autos-marcas' %}">Marcas</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="news.html">Our Updates</a>
+                            <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                         </li>
-
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="{% url 'sobre-nosotros' %}">Sobre Nosotros</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="d-none d-lg-block">
-                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Reservation</button>
+                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Login In</button>
                 </div>
 
             </div>
         </nav>
 
         <main>
-
             <section class="hero">
+                
+                <div class="overlay">
+                    <img src="{% static 'PaginaAutos/images/inicio.jpg' %}" class="overlay" width="100%">
+                </div>
+                {% block contenido %}
+        
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-lg-5 col-12 m-auto">
+                        <div>
                             <div class="heroText">
-                                <h1 class="text-white mb-lg-5 mb-3">Delicious Steaks</h1>
+                                <h1 class="text-white mb-lg-5 mb-3">Libreria <br>de Autos</h1>
                             </div>
                         </div>
-
-                        <div class="col-lg-7 col-12">
-                            <div id="carouselExampleCaptions" class="carousel carousel-fade hero-carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-
-                                    <div class="carousel-item">
-                                        <div class="carousel-image-wrap">
-                                            <img src="{% static 'PaginaAutos/images/slide/ivan-torres-MQUqbmszGGM-unsplash.jpg' %}" class="img-fluid carousel-image" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-                <div class="overlay"></div>
             </section>
-
+            
             <section class="menu section-padding">
                 <div class="container">
                     <div class="row">
 
                         <div class="col-12">
-                            <h2 class="text-center mb-lg-5 mb-4">Special Menus</h2>
+                            <h2 class="text-center mb-lg-5 mb-4">Marcas Favoritas</h2>
                         </div>
 
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="menu-thumb">
                                 <div class="menu-image-wrap">
-                                    <img src="{% static 'PaginaAutos/images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg' %}" class="img-fluid menu-image" alt="">
-
-                                    <span class="menu-tag bg-warning">Breakfast</span>
+                                    <a href="ford.html"><img src="{% static 'PaginaAutos/images/ford.jpg' %}" class="img-fluid menu-image" alt=""></a>
                                 </div>
 
                                 <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Morning Fresh</h4>
-
-                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>12.50</span>
-
-                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
-                                        <h6 class="reviews-text mb-0 me-3">4.3/5</h6>
-
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
-
-                                        <p class="reviews-text mb-0 ms-4">102 Reviews</p>
-                                    </div>
+                                    <h4 class="mb-0">Ford</h4>
                                 </div>
                             </div>
                         </div>
@@ -149,29 +119,11 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="menu-thumb">
                                 <div class="menu-image-wrap">
-                                    <img src="{% static 'PaginaAutos/images/lunch/farhad-ibrahimzade-MGKqxm6u2bc-unsplash.jpg' %}" class="img-fluid menu-image" alt="">
-
-                                    <span class="menu-tag bg-warning">Lunch</span>
+                                    <a href="chevrolet.html"><img src="{% static 'PaginaAutos/images/chevrolet.jpg' %}" class="img-fluid menu-image" alt=""></a>
                                 </div>
 
                                 <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Tooplate Soup</h4>
-
-                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>24.50</span>
-
-                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
-                                        <h6 class="reviews-text mb-0 me-3">3/5</h6>
-
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
-
-                                        <p class="reviews-text mb-0 ms-4">50 Reviews</p>
-                                    </div>
+                                    <h4 class="mb-0">Chevrolet</h4>
                                 </div>
                             </div>
                         </div>
@@ -179,31 +131,11 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="menu-thumb">
                                 <div class="menu-image-wrap">
-                                    <img src="{% static 'PaginaAutos/images/dinner/keriliwi-c3mFafsFz2w-unsplash.jpg' %}" class="img-fluid menu-image" alt="">
-
-                                    <span class="menu-tag bg-warning">Dinner</span>
+                                    <a href="audi.html"><img src="{% static 'PaginaAutos/images/audi.jpg' %}" class="img-fluid menu-image" alt=""></a>
                                 </div>
 
                                 <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Premium Steak</h4>
-
-                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>45</span>
-
-                                    <del class="ms-4"><small>$</small>150</del>
-
-                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
-                                        <h6 class="reviews-text mb-0 me-3">3/5</h6>
-
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
-
-                                        <p class="reviews-text mb-0 ms-4">86 Reviews</p>
-                                    </div>
+                                    <h4 class="mb-0">Audi</h4>
                                 </div>
                             </div>
                         </div>
@@ -211,31 +143,11 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="menu-thumb">
                                 <div class="menu-image-wrap">
-                                    <img src="{% static 'PaginaAutos/images/dinner/farhad-ibrahimzade-ZipYER3NLhY-unsplash.jpg' %}" class="img-fluid menu-image" alt="">
-
-                                    <span class="menu-tag bg-warning">Dinner</span>
+                                    <a href="ferrari.html"><img src="{% static 'PaginaAutos/images/ferrari.jpg' %}" class="img-fluid menu-image" alt=""></a>
                                 </div>
 
                                 <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Seafood Set</h4>
-
-                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>86</span>
-
-                                    <del class="ms-4"><small>$</small>124</del>
-
-                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
-                                        <h6 class="reviews-text mb-0 me-3">3/5</h6>
-
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
-
-                                        <p class="reviews-text mb-0 ms-4">44 Reviews</p>
-                                    </div>
+                                    <h4 class="mb-0">Ferrari</h4>
                                 </div>
                             </div>
                         </div>
@@ -243,29 +155,11 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="menu-thumb">
                                 <div class="menu-image-wrap">
-                                    <img src="{% static 'PaginaAutos/images/breakfast/louis-hansel-dphM2U1xq0U-unsplash.jpg' %}" class="img-fluid menu-image" alt="">
-
-                                    <span class="menu-tag bg-warning">Breakfast</span>
+                                    <a href="lamborgini.html"><img src="{% static 'PaginaAutos/images/lambo.jpg' %}" class="img-fluid menu-image" alt=""></a>
                                 </div>
 
                                 <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Burger Set</h4>
-
-                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>20.50</span>
-
-                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
-                                        <h6 class="reviews-text mb-0 me-3">4.3/5</h6>
-
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
-
-                                        <p class="reviews-text mb-0 ms-4">102 Reviews</p>
-                                    </div>
+                                    <h4 class="mb-0">Lamborgini</h4>
                                 </div>
                             </div>
                         </div>
@@ -273,29 +167,11 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="menu-thumb">
                                 <div class="menu-image-wrap">
-                                    <img src="{% static 'PaginaAutos/images/breakfast/louis-hansel-dphM2U1xq0U-unsplash.jpg' %}" class="img-fluid menu-image" alt="">
-
-                                    <span class="menu-tag bg-warning">Lunch</span>
+                                    <a href="volkswagen.html"><img src="{% static 'PaginaAutos/images/volkswagen.jpg' %}" class="img-fluid menu-image" alt=""></a>
                                 </div>
 
                                 <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Healthy Soup</h4>
-
-                                    <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>34.20</span>
-
-                                    <div class="d-flex flex-wrap align-items-center w-100 mt-2">
-                                        <h6 class="reviews-text mb-0 me-3">3/5</h6>
-
-                                        <div class="reviews-stars">
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star-fill reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                            <i class="bi-star reviews-icon"></i>
-                                        </div>
-
-                                        <p class="reviews-text mb-0 ms-4">64 Reviews</p>
-                                    </div>
+                                    <h4 class="mb-0">Volkswagen</h4>
                                 </div>
                             </div>
                         </div>
@@ -303,7 +179,7 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                     </div>
                 </div>
             </section>
-
+        {% endblock %}
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>

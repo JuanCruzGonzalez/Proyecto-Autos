@@ -320,7 +320,7 @@ strong {
 -----------------------------------------*/
 .hero {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   padding-top: 20.542rem;
   padding-bottom: 20.542rem;
 }
