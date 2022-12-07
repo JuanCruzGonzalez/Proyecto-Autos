@@ -1,0 +1,17 @@
+{% extends 'PaginaAutos/index.html'%}
+
+{% block contenido %}
+
+<h1>Lista de Autos</h1>
+
+<ul>
+    {% for auto in object_list %}
+        <li>
+            {{auto.nombre}}
+            <a href="{% url 'autos-detalle' auto.id%}">Detalle</a>
+            <a href="{% url 'autos-borrar' auto.id%}">Borrar</a>
+            <a href="{% url 'autos-update' auto.id%}">Actualizar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

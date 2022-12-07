@@ -1,0 +1,14 @@
+{% extends 'PaginaAutos/index.html'%}
+
+{% block contenido %}
+
+<form method="post">
+    {% csrf_token %}
+    <p>
+        ¿Seguro que quiere borrar {{object.nombre}}?
+        <input type="submit" value="Si">
+    </p>
+    <a href="{% url 'autos-list' %}"> Volver al listado de autos</a>
+</form>
+
+{% endblock %}

@@ -307,7 +307,7 @@ strong {
 
 .overlay {
   background: linear-gradient(to top, var(--dark-color), transparent 100%);
-  position: absolute;
+  position: hidden;
   top: 0;
   right: 0;
   bottom: 0;
@@ -324,7 +324,7 @@ strong {
   padding-top: 20.542rem;
   padding-bottom: 20.542rem;
 }
-
+    
 .hero .container {
   position: absolute;
   z-index: 9;
