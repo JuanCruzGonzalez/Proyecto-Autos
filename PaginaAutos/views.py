@@ -17,7 +17,7 @@ def Autos(request):
 def Marcas(request):
     return render(request, 'PaginaAutos/marcas.html')
 
-def Motores(request):
+def Chat(request):
     return render(request, 'PaginaAutos/motores.html')
 
 def Nosotros(request):

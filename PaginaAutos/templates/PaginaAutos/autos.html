@@ -1,26 +1,16 @@
 {% extends 'PaginaAutos/index.html'%}
 
 {% block contenido %}
-<style>
-.button{  
-        background-color: #000000;
-        color: #FFFFFF;
-        padding: 80px;
-        border-radius: 102px;
-        -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
-        margin:181px
-      }
-   
-</style>
-<main>
-    <h1 class="text-white mb-lg-5 mb-3">Autos</h1>                  
-    <a href="{% url 'autos-crear' %}" class="button">
+<center><h1 class="text-white mb-lg-5 mb-3">Autos</h1></center>
+
+<section class="menu section-padding">
+    <a href="{% url 'autos-crear' %}" class="custom-btn" style="color:black">
         Crear Auto
     </a>
-    <a href="{% url 'autos-list' %}" class="button">
+    <a href="{% url 'autos-list' %}" class="custom-btn" style="color:black">
         Buscar Auto
     </a>
-</main>
+</section>
+
 
 {% endblock %}

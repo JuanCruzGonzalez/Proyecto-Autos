@@ -22,13 +22,6 @@
 
         <link href="{% static 'PaginaAutos/css/tooplate-crispy-kitchen.css' %}" rel="stylesheet">
         
-<!--
-
-Tooplate 2129 Crispy Kitchen
-
-https://www.tooplate.com/view/2129-crispy-kitchen
-
--->
     </head>
     
     <body>
@@ -52,7 +45,7 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'autos-motores' %}">Motores</a>
+                            <a class="nav-link" href="{% url 'autos-chat' %}">Chat Global</a>
                         </li>
 
                         <li class="nav-item">
@@ -76,26 +69,29 @@ https://www.tooplate.com/view/2129-crispy-kitchen
             </div>
         </nav>
         
-        <main>
+    <main>
+        <section >
+            <div class="container">
+                <div class="row">
 
-            <div >  
-                <div>
-                    <img src="{% static 'PaginaAutos/images/inicio.jpg' %}" width="100%">
-                </div>
-        {% block contenido %}
-                
-                <div class="container">
-                    <div class="row">
+                    <div class="col-lg-5 col-12 m-auto">
+                        <div class="heroText">
 
-                        <div>
-                            <div class="heroText">
-                                <h1 class="text-white mb-lg-5 mb-3">Libreria <br>de Autos</h1>
-                            </div>
+                            <h1 class="text-white mb-lg-5 mb-3">Libreria de Autos</h1>
                         </div>
                     </div>
+                    <div class="video-wrap">
+                        <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                            <source src="{% static 'PaginaAutos/images/videoplayback.mp4'%}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                    </div>    
+
                 </div>
             </div>
-            
+        </section>
+        {% block contenido %}
+
             <section class="menu section-padding">
                 <div class="container">
                     <div class="row">
