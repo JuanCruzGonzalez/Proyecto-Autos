@@ -1,12 +1,13 @@
 {% extends 'PaginaAutos/index.html'%}
 
 {% block contenido %}
+<section class="menu section-padding">
 
-<form method="post">
+    <form method="post">
 
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Crear/Actualizar">
-</form>
-
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Crear/Actualizar">
+    </form>
+</section>
 {% endblock %}

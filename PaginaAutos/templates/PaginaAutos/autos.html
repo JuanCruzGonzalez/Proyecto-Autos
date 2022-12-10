@@ -1,15 +1,43 @@
 {% extends 'PaginaAutos/index.html'%}
 
 {% block contenido %}
-<center><h1 class="text-white mb-lg-5 mb-3">Autos</h1></center>
+<head>
+    <style>
+        #Power-Contenedor{
+        text-align: center;
+        }
 
+        #Anyadir-Rutina-btn {
+        background-color: #21211d;
+        color: #FFF;
+        padding: 10px;
+        border-radius: 20px;
+        text-decoration: none;
+        cursor: pointer;
+        }
+        .custom-btn2 {
+        border: double;
+        background-color:orangered;
+        border-radius: 10px;
+        color: var(--black-color);
+        font-size: var(--menu-font-size);
+        padding: 10px 35px;
+        margin: 0px 10px 10px;
+        }
+        
+    </style>
+</head>
 <section class="menu section-padding">
-    <a href="{% url 'autos-crear' %}" class="custom-btn" style="color:black">
+    <div id="Power-Contenedor">
+    <center><h1 class="text-black mb-lg-5 mb-3">Autos</h1></center>
+
+    <a href="{% url 'autos-crear' %}" class="custom-btn2" id="Power-Contenedor" style="color:black">
         Crear Auto
     </a>
-    <a href="{% url 'autos-list' %}" class="custom-btn" style="color:black">
+    <a href="{% url 'autos-list' %}" class="custom-btn2" id="Power-Contenedor" style="color:black">
         Buscar Auto
     </a>
+    </div>
 </section>
 
 

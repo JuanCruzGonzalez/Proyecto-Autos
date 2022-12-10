@@ -2,12 +2,12 @@
 
 {% block contenido %}
 
-
-<form method="post">
-    {% csrf_token %}
-    {{ formulario.as_p }}
-    <input type="submit" value="Cargar Profesor">
-</form>
-
+<section class="menu section-padding">
+    <form method="post">
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <input type="submit" value="Cargar Auto">
+    </form>
+</section>
 
 {% endblock %}
