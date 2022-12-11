@@ -1,19 +1,13 @@
-{% extends 'PaginaAutos/index.html'%}
 
-{% block contenido %}
 
-{% if errors %}
+{% for auto in object_list %}
+            <li id="header">
+                <span><h5>{{auto.mensaje}}</h5></span>
+                <a href="{% url 'autos-detalle' auto.id%}" class="custom-btn2 btn-primary">Detalle</a>
+                <a href="{% url 'autos-borrar' auto.id%}" class="custom-btn2 btn-danger">Borrar</a>
+                <a href="{% url 'autos-update' auto.id%}" class="custom-btn2 btn-success">Actualizar</a>
+            </li>
+            <br>
+        {% endfor %}
 
-    <p style="color:red">Error en el inicio de secion: {{errors}}</p>
 
-{% endif %}
-
-<form method="post" enctype="multipart/form-data">
-
-    {% csrf_token%}
-    {{form.as_p}}
-    <input type="submit" value="Guardar">
-
-</form>
-
-{% endblock %}

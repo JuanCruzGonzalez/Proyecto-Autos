@@ -8,5 +8,7 @@ class Auto(models.Model):
     motor = models.CharField(max_length=100)
     imagen = models.ImageField(upload_to="autos", null=True, blank=True)
     def __str__(self) -> str:
-        return f"{self.nombre} {self.marca} | Motor: {self.motor} | Modelo: {self.modelo} | Marca: {self.marca} | Imagen: {self.imagen}"
-
+        return f"{self.nombre} | Motor: {self.motor} | Modelo: {self.modelo} | Marca: {self.marca}"
+        
+class Mensaje(models.Model):
+    mensaje=models.CharField(max_length=150)

@@ -15,15 +15,7 @@
         text-decoration: none;
         cursor: pointer;
         }
-        .custom-btn2 {
-        border: double;
-        background-color:orangered;
-        border-radius: 10px;
-        color: var(--black-color);
-        font-size: var(--menu-font-size);
-        padding: 10px 35px;
-        margin: 0px 10px 10px;
-        }
+    
         
     </style>
 </head>
@@ -31,10 +23,10 @@
     <div id="Power-Contenedor">
     <center><h1 class="text-black mb-lg-5 mb-3">Autos</h1></center>
 
-    <a href="{% url 'autos-crear' %}" class="custom-btn2" id="Power-Contenedor" style="color:black">
+    <a href="{% url 'autos-crear' %}" class="custom-btn btn btn-danger" id="Power-Contenedor">
         Crear Auto
     </a>
-    <a href="{% url 'autos-list' %}" class="custom-btn2" id="Power-Contenedor" style="color:black">
+    <a href="{% url 'autos-list' %}" class="custom-btn btn btn-danger" id="Power-Contenedor">
         Buscar Auto
     </a>
     </div>

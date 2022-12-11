@@ -28,7 +28,7 @@ def Contacto(request):
 
 def resultado_buscar_autos(request):
     if request.GET:
-        nombre=request.GET["nombre_alumno"]
+        nombre=request.GET["nombre"]
         if(nombre != ''):
             autos=Auto.objects.filter(nombre__icontains=nombre)
             return render(request, 'PaginaAutos/resultado_buscar_auto.html',{"autos":autos})
@@ -61,6 +61,15 @@ class AutosBorrar(DeleteView):
 
 def CrearAutos(request):
     return render(request, "PaginaAutos/crear_autos.html")
+
+class MensajeCrear(CreateView):
+    model = Mensaje
+    success_url = '/autos/chat'
+    fields = ['mensaje']
+    
+class MensajeLista(ListView):
+    model = Mensaje
+    template_name = 'PaginaAutos/agregar_imagen.html'
 
 def Login(request):
 

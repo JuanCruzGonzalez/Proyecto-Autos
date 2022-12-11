@@ -66,11 +66,16 @@
                         </li>
                     </ul>
                 </div>
-
+                {% if request.user.is_authenticated %}
+                    <a class="custom-btn btn btn-danger" href="{% url 'auth-logout'%}">Logout</a>
+                    <p class="text muted small mb-4 mb-lg-0"> Hola {{request.user}}</p>
+                    <img src="{{imagen_url}}" style="max-width: 15px;">
+                {% else %}
                 <div class="d-none d-lg-block">
                     <a class="custom-btn btn btn-danger" href="{% url 'auth-login' %}">Login</a>
                     <a class="custom-btn btn btn-danger" href="{% url 'auth-register' %}">Register</a> 
                 </div>
+                {% endif %}
 
             </div>
         </nav>
