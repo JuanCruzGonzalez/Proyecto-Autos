@@ -1,14 +1,14 @@
 {% extends 'PaginaAutos/index.html'%}
 
 {% block contenido %}
-
-<form method="post">
+<section class="menu section-padding">
+    <form method="post">
     {% csrf_token %}
     <p>
-        ¿Seguro que quiere borrar {{object.nombre}}?
-        <input type="submit" value="Si">
+        <h6>¿Seguro que quiere borrar {{object.nombre}}?</h6>
+        <input type="submit" value="Si" class="custom-btn2 btn-success">
     </p>
-    <a href="{% url 'autos-list' %}"> Volver al listado de autos</a>
-</form>
-
+    <a class="custom-btn btn-danger" href="{% url 'autos-list' %}"> No, volver al listado de autos</a>
+    </form>
+</section>
 {% endblock %}

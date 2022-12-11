@@ -1,0 +1,32 @@
+{% extends 'PaginaAutos/index.html'%}
+
+{% block contenido %}
+<head>
+    <style>
+        .btn-out{
+            right: 100%;
+        }
+    </style>
+</head>
+{% load static %}
+<section class="menu section-padding">
+    <center><h2 class="text-black mb-lg-5 mb-3">Chat Global</h2></center>
+    <div id="wrapper">
+      <div id="menu">
+        <h3 class="welcome">Bienvenido<b></b></h3>
+        <p><a style="position:absolute; bottom:50px; right:50px;"href="{% url 'autos-inicio' %}" class="custom-btn btn btn-danger">Salir del Chat</a></p>
+    </div>
+    </div>
+    <ul>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Enviar">
+        </form>
+
+        
+    </ul>
+</section>
+
+
+{% endblock %}

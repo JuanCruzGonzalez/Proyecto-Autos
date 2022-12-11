@@ -1,29 +1,49 @@
 {% extends 'PaginaAutos/index.html'%}
 
 {% block contenido %}
+<head>
+    <style>
+        input.text, select.text, textarea.text {
+        background: white;
+        border: 1px solid #393939;
+        border-radius: 5px 5px 5px 5px;
+        font-size: 12px;
+        padding: 5px;
+        }
+        .custom-btn2 {
+        border: 0;
+        color: var(--white-color);
+        font-size: var(--menu-font-size);
+        padding: 3px 10px;
+        }
+        #header h5 { display:inline; }
+    </style>
+</head>
 
 <section class="menu section-padding">
     <body>
         {% load static %}
-
         <h1>Buscar Auto</h1>
         <form action="{% url 'resultado-buscar-auto'%}" method="get" class="form">
-            <input type="text" required name="nombre">
-            <label class="lbl-nombre">
-                <span class="text-nomb">Nombre</span>
+            <label>
+                <span class="news-text-info">Nombre</span>
             </label>
+            <input type="text" required name="nombre" class="text">
+            
         </form>
     </body>
+    <br><br>
     <h1>Lista de Autos</h1>
 
     <ul>
         {% for auto in object_list %}
-            <li>
-                {{auto.nombre}}
-                <a href="{% url 'autos-detalle' auto.id%}">Detalle</a>
-                <a href="{% url 'autos-borrar' auto.id%}">Borrar</a>
-                <a href="{% url 'autos-update' auto.id%}">Actualizar</a>
+            <li id="header">
+                <span><h5>{{auto.nombre}}</h5></span>
+                <a href="{% url 'autos-detalle' auto.id%}" class="custom-btn2 btn-primary">Detalle</a>
+                <a href="{% url 'autos-borrar' auto.id%}" class="custom-btn2 btn-danger">Borrar</a>
+                <a href="{% url 'autos-update' auto.id%}" class="custom-btn2 btn-success">Actualizar</a>
             </li>
+            <br>
         {% endfor %}
     </ul>
 </section>

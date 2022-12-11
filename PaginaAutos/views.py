@@ -29,7 +29,7 @@ def Contacto(request):
 
 def resultado_buscar_autos(request):
     if request.GET:
-        nombre=request.GET["nombre_alumno"]
+        nombre=request.GET["nombre"]
         if(nombre != ''):
             autos=Auto.objects.filter(nombre__icontains=nombre)
             return render(request, 'PaginaAutos/resultado_buscar_auto.html',{"autos":autos})
@@ -62,3 +62,54 @@ class AutosBorrar(DeleteView):
 
 def CrearAutos(request):
     return render(request, "PaginaAutos/crear_autos.html")
+
+
+class MensajeCrear(CreateView):
+    model = Mensaje
+    success_url = '/autos/chat'
+    fields = ['mensaje']
+    
+class MensajeLista(ListView):
+    model = Mensaje
+    template_name = 'PaginaAutos/agregar_imagen.html'
+
+def Login(request):
+
+    errors = []
+
+    if request.method == "POST":
+        formulario = AuthenticationForm(request, data=request.POST)
+
+        if formulario.is_valid():
+            data = formulario.cleaned_data
+
+            user = authenticate(username=data["username"], password =data["password"])
+
+            if user is not None:
+                login(request, user)
+                return redirect("autos-inicio")
+            
+            else:
+                return render(request, "PaginaAutos/login.html", {"form": formulario, "errors": "Credenciales invalidas"})
+        else:
+                return render(request, "PaginaAutos/login.html", {"form": formulario, "errors": formulario.errors})
+
+
+    formulario = AuthenticationForm()
+    return render(request, "PaginaAutos/login.html", {"form":formulario, "errors": errors}) 
+
+def registrar_usuario(request):
+    if request.method == "POST":
+        formulario = UserRegisterForm(request.POST)
+
+        if formulario.is_valid():
+            
+            formulario.save()
+            return redirect("autos-inicio")
+        else:
+            return render(request, "PaginaAutos/register.html", {"form": formulario, "errors": formulario})
+
+    formulario = UserRegisterForm()
+
+    return render(request, "PaginaAutos/register.html", {"form": formulario})
+    

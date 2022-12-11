@@ -10,3 +10,6 @@ class Auto(models.Model):
 
     def __str__(self) -> str:
         return f"{self.nombre} | Motor: {self.motor} | Modelo: {self.modelo} | Marca: {self.marca}"
+    
+class Mensaje(models.Model):
+    mensaje=models.CharField(max_length=150)
