@@ -339,7 +339,7 @@ strong {
 }
 
 .custom-video {
-  position: absolute;
+  position: static;
   top: 0;
   left: 0;
   object-fit: cover;

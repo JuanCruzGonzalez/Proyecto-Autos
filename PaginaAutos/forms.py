@@ -8,4 +8,6 @@ class AutosFormulario(forms.Form):
     marca = forms.CharField(max_length=100)
     modelo = forms.CharField(max_length=100)
     motor = forms.CharField(max_length=100)
-    imagen = forms.ImageField()
+
+class ImagenForm(forms.Form):
+    imagen= forms.ImageField()

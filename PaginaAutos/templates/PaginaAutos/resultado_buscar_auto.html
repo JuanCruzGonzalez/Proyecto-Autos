@@ -1,0 +1,11 @@
+{% extends 'PaginaAutos/index.html'%}
+
+{% block contenido %}
+<section class="menu section-padding">
+    <ul>
+        {% for auto in autos %}
+        <li style=color:black><h4>{{auto.nombre}}--{{auto.marca}}-{{auto.modelo}}</h4></li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

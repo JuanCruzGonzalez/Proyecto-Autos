@@ -14,4 +14,6 @@ urlpatterns = [
     path('cursos/actualizar/<pk>', AutosUpdate.as_view(), name="autos-update"),
     path('cursos/borrar/<pk>', AutosBorrar.as_view(), name="autos-borrar"),
     path('sobre-nosotros/', Nosotros, name='sobre-nosotros'),
+    path('buscar/autos/', resultado_buscar_autos, name='resultado-buscar-auto'),
+    path('editar/imagen-auto/', imagen_auto, name='editar-imagen-auto')
  ]

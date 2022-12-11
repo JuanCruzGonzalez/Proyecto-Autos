@@ -1,7 +1,19 @@
 {% extends 'PaginaAutos/index.html'%}
 
 {% block contenido %}
+
 <section class="menu section-padding">
+    <body>
+        {% load static %}
+
+        <h1>Buscar Auto</h1>
+        <form action="{% url 'resultado-buscar-auto'%}" method="get" class="form">
+            <input type="text" required name="nombre">
+            <label class="lbl-nombre">
+                <span class="text-nomb">Nombre</span>
+            </label>
+        </form>
+    </body>
     <h1>Lista de Autos</h1>
 
     <ul>
