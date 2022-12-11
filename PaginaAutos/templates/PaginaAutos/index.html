@@ -26,14 +26,6 @@
             background-color: #ddd;
             padding: 80px 16px 16px 16px;
             }
-            .custom-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-            }
         </style>
     </head>
     
@@ -76,7 +68,8 @@
                 </div>
 
                 <div class="d-none d-lg-block">
-                    <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Login In</button>
+                    <a class="custom-btn btn btn-danger" href="{% url 'auth-login' %}">Login</a>
+                    <a class="custom-btn btn btn-danger" href="{% url 'auth-register' %}">Register</a> 
                 </div>
 
             </div>
@@ -84,10 +77,10 @@
         
     <main>
         <section >
-            <div>
+            <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-5 col-12 m-auto">
+                    <div class="col-lg-7 col-12 m-auto">
                         <div class="heroText">
 
                             <center><h1 class="text-white mb-lg-5 mb-3">Cars Library</h1></center>

@@ -1,5 +1,7 @@
 from django.urls import path   
 from PaginaAutos.views import *
+from PaginaAutos import views
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('inicio/', Inicio, name='autos-inicio'),
@@ -15,4 +17,7 @@ urlpatterns = [
     path('sobre-nosotros/', Nosotros, name='sobre-nosotros'),
     path('buscar/autos/', resultado_buscar_autos, name='resultado-buscar-auto'),
     path('editar/imagen-auto/', imagen_auto, name='editar-imagen-auto'),
+    path('Inicio-sesion/', Login, name="auth-login" ),
+    path('register/', registrar_usuario, name="auth-register" ),
+    path("logout/",LogoutView.as_view(template_name="PaginaAutos/logout.html"), name="auth-logout")
  ]

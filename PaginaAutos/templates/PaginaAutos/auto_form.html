@@ -3,7 +3,7 @@
 {% block contenido %}
 <section class="menu section-padding">
 
-    <form method = "post" enctype="multipart/form-data"> 
+    <form method="post">
 
         {% csrf_token %}
         {{form.as_p}}

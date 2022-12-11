@@ -7,3 +7,7 @@ Victor Mariano Cuba Larrain
 Felipe Da Rosa
 
 Soy Juan Cruz, lo que hice fue encargarme del Inicio de la pagina. Busque un template base y luego lo modifique para adaptarlo a la idea de la pagina de autos. Luego cree el inicio y las demas paginas de la barra de navegacion AUTOS/CHAT GLOBAL/MARCAS/CONTACTO/SOBRE NOSOTROS. le di funcionalidad a la pagina para que todo funcione correctamente. En el apartado de autos me encargue de creear modulo y formulario para poder buscar o creear los autos y tambien cree la pagina para listar los autos de la BD
+
+Felipe Da Rosa, realice la creacion del superusuario, para luego realizar gestion de permisos. Cuatro casos de prueba realizados y debidamente documentados (individualmente y en plantilla) en etapa temprana del desarrollo para subir en una carpeta a Github. Creacion de modelo y vistas marcas, con una descripcion en la base de datos para consultar en detalle breve historia de marcas. Revision de botones que funcionen en las paginas, en caso contrario direccionar a template "aun no hay paginas"
+
+Soy Victor Cuba, yo me encargué de crear el login, register, logout, y la sesión del usuario, crear los formularios y la funcionalidad de todos estos. Usando la documentación de boostrap logré hacer mi formulario responsive para que se pueda visualizar mejor de acuerdo a las dimensiones de la pantalla.
