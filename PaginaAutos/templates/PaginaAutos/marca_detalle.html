@@ -1,0 +1,15 @@
+{% extends 'PaginaAutos/index.html'%}
+
+{% block contenido %}
+<section class="menu section-padding">
+
+    <p>Informacion sobre {{object.nombre}}: 
+        <p>
+            Creada en {{object.pais}}, en {{object.fecha_creacion.year}}.
+        </p>
+        <p>
+            {{object.historia}}
+        </p>
+
+</section>
+{% endblock %}

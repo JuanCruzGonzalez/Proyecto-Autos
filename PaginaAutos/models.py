@@ -9,3 +9,12 @@ class Auto(models.Model):
     imagen = models.ImageField(upload_to="autos", null=True, blank=True)
     def __str__(self) -> str:
         return f"{self.nombre} {self.marca} | Motor: {self.motor} | Modelo: {self.modelo} | Marca: {self.marca} | Imagen: {self.imagen}"
+
+class Marca(models.Model):
+    nombre = models.CharField(max_length=100)
+    historia = models.CharField(max_length=100)
+    fecha_creacion = models.DateField()
+    pais = models.CharField(max_length=100)
+
+    def __str__(self) -> str:
+        return f"{self.nombre} Creada el: {self.fecha_creacion.year} en {self.pais}. {self.historia} "
