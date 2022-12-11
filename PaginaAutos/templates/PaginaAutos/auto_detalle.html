@@ -1,9 +1,12 @@
 {% extends 'PaginaAutos/index.html'%}
 
 {% block contenido %}
+
 <section class="menu section-padding">
 
     <p>Auto: {{auto}}</p>
+    <img src="{{auto.imagen.url}}">
+    
 
 </section>
 {% endblock %}

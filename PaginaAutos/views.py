@@ -41,7 +41,7 @@ def resultado_buscar_autos(request):
 class AutoCrear(CreateView):
     model = Auto
     success_url = '/autos/inicio'
-    fields = ['nombre', 'marca', 'motor', 'modelo']
+    fields = ['nombre', 'marca', 'motor', 'modelo', 'imagen']
 
 class AutosLista(ListView):
     model = Auto
@@ -54,7 +54,7 @@ class AutoDetalle(DetailView):
 class AutosUpdate(UpdateView):
     model= Auto
     success_url = '/autos/inicio'
-    fields = ['nombre', 'marca', 'motor', 'modelo']
+    fields = ['nombre', 'marca', 'motor', 'modelo', 'imagen']
 
 class AutosBorrar(DeleteView):
     model= Auto
@@ -62,17 +62,3 @@ class AutosBorrar(DeleteView):
 
 def CrearAutos(request):
     return render(request, "PaginaAutos/crear_autos.html")
-
-def imagen_auto(request):
-    if request.method=="POST":
-
-        formulario= ImagenForm(request.POST, files=request.FILES)
-        if formulario.is_valid():
-            formulario.save()
-
-            return redirect("autos-inicio")
-        
-        else:
-            return render(request, 'PaginaAutos/agregar_avatar.html',{"form":formulario, "errors":formulario.errors})
-
-    return render(request,'PaginaAutos/agregar_imagen.html', locals())
