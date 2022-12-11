@@ -11,7 +11,6 @@ urlpatterns = [
     path('autos/crear/', AutoCrear.as_view(), name="autos-crear"),
     path('autos/detalle/<pk>', AutoDetalle.as_view(), name="autos-detalle"),
     path('autos/list/', AutosLista.as_view(), name="autos-list"),
-    path('chat/men', MensajeLista.as_view(), name="autos-chat"),
     path('autos/actualizar/<pk>', AutosUpdate.as_view(), name="autos-update"),
     path('autos/borrar/<pk>', AutosBorrar.as_view(), name="autos-borrar"),
     path('sobre-nosotros/', Nosotros, name='sobre-nosotros'),
