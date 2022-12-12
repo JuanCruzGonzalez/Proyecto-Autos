@@ -18,8 +18,6 @@ def Autos(request):
 def Marcas(request):
     return render(request, 'PaginaAutos/marcas.html')
 
-def Chat(request):
-    return render(request, 'PaginaAutos/chat-global.html')
 
 def Nosotros(request):
     return render(request, 'PaginaAutos/nosotros.html')
@@ -38,7 +36,9 @@ def resultado_buscar_autos(request):
     else:
             return render(request, 'PaginaAutos/resultado_buscar_auto.html',{"autos":[]})
 
-class AutoCrear(CreateView):
+
+class AutoCrear(LoginRequiredMixin,CreateView):
+    login_url="/autos/Inicio-sesion/"
     model = Auto
     success_url = '/autos/inicio'
     fields = ['nombre', 'marca', 'motor', 'modelo', 'imagen']
@@ -63,8 +63,8 @@ class AutosBorrar(DeleteView):
 def CrearAutos(request):
     return render(request, "PaginaAutos/crear_autos.html")
 
-
-class MensajeCrear(CreateView):
+class MensajeCrear(LoginRequiredMixin,CreateView):
+    login_url="/autos/Inicio-sesion/"
     model = Mensaje
     success_url = '/autos/chat'
     fields = ['mensaje']

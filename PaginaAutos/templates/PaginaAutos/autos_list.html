@@ -21,19 +21,19 @@
 </head>
 
 <section class="menu section-padding">
-    <body>
+    <div style="position:relative; bottom:10px; right:0px;">
         {% load static %}
-        <h1>Buscar Auto</h1>
-        <form action="{% url 'resultado-buscar-auto'%}" method="get" class="form">
+        <h3 style="margin-left: 40px;">Buscar Auto</h3>
+        <form action="{% url 'resultado-buscar-auto'%}" method="get" class="form btn-custom btn btn-danger" style="margin-left: 40px;">
             <label>
-                <span class="news-text-info">Nombre</span>
+                <span class="helptext">Nombre</span>
             </label>
-            <input type="text" required name="nombre" class="text">
-            
+            <input type="text" required name="nombre" class="text">  
         </form>
-    </body>
+    </div>
     <br><br>
-    <h1>Lista de Autos</h1>
+    <div style="position:relative; bottom:170px; left: 760px;">
+    <h3 style="margin-left: 20px;">Lista de Autos</h3 style="margin-left: 20px;">
 
     <ul>
         {% for auto in object_list %}
@@ -46,5 +46,6 @@
             <br>
         {% endfor %}
     </ul>
+    </div>
 </section>
 {% endblock %}

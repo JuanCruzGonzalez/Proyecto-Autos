@@ -83,7 +83,7 @@
                 </div>
                 {% if request.user.is_authenticated %}
                     <a class="custom-btn btn btn-danger" href="{% url 'auth-logout'%}">Logout</a>
-                    <p class="text muted small mb-4 mb-lg-0"> Hola {{request.user}}</p>
+                    <h6 class="text muted small mb-4 mb-lg-0" style="margin-left: 5px;">Hola {{request.user}}</h6>
                     <img src="{{imagen_url}}" style="max-width: 15px;">
                 {% else %}
                 <div class="d-none d-lg-block">
