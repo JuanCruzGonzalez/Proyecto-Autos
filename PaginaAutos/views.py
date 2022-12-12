@@ -112,4 +112,8 @@ def registrar_usuario(request):
     formulario = UserRegisterForm()
 
     return render(request, "PaginaAutos/register.html", {"form": formulario})
+
+class MarcaDetalle(DetailView):
+    model = Marca
+    template_name = 'PaginaAutos/marca_detalle.html'
     
