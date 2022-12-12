@@ -1,6 +1,7 @@
 from django.urls import path   
 from PaginaAutos.views import *
-
+from django.contrib.auth.views import LogoutView
+from Accounts.cuentas.views import *
 urlpatterns = [
     path('inicio/', Inicio, name='autos-inicio'),
     path('modelos/', Autos, name='autos-modelos'),
@@ -14,5 +15,5 @@ urlpatterns = [
     path('autos/borrar/<pk>', AutosBorrar.as_view(), name="autos-borrar"),
     path('sobre-nosotros/', Nosotros, name='sobre-nosotros'),
     path('buscar/autos/', resultado_buscar_autos, name='resultado-buscar-auto'),
-    path('editar/imagen-auto/', imagen_auto, name='editar-imagen-auto'),
+    # path('editar/imagen-auto/', imagen_auto, name='editar-imagen-auto'),
  ]
