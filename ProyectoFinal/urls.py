@@ -18,16 +18,21 @@ from django.urls import path, include
 from PaginaAutos.views import *
 import ProyectoFinal.settings as settings
 from django.conf.urls.static import static
-from Accounts.cuentas.views import *
-from django.contrib.auth.views import LogoutView
+from Accounts.views import *
+from django.conf import settings
+from django.conf.urls.static import static
+
+#from Accounts.urls import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('autos/', include('PaginaAutos.urls')),
+    path('Accounts/', include('Accounts.urls')),
     path('', Inicio),
-    path('Inicio-sesion/', include('Accounts.cuentas.urls') ,Login, name="auth-login" ),
-    path('register/', include('Accounts.cuentas.urls'),registrar_usuario, name="auth-register" ),
-    path("logout/", include('Accounts.cuentas.urls'), LogoutView.as_view(template_name="PaginaAutos/logout.html"), name="auth-logout"),
+    
+
+
+
 
 ]
 

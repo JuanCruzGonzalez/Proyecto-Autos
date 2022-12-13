@@ -1,0 +1,23 @@
+{% extends 'Accounts/index.html'%}
+
+{% block contenido %}
+<form method="post">
+    {% csrf_token %}
+
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="pe-5 ps-5 rounded bg-white text-secondary shadow" style="width: 30rem">
+            <center><h3 class="text-black">Actualizar Datos</h3></center>
+            {% for field in form %}
+            <div class="mt-3">
+                <label class="label-control" for="{{ field.auto_id }}">{{ field.label }}</label>
+                {{ field }}
+            </div>
+
+            {% endfor %}
+            <div class="d-flex gap-2 justify-content-center mt-3 mb-3">
+                <input type="submit" class="btn btn-danger border  shadow-sm" value="Guardar">
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,7 +1,6 @@
 from django.urls import path   
 from PaginaAutos.views import *
 from django.contrib.auth.views import LogoutView
-from Accounts.cuentas.views import *
 urlpatterns = [
     path('inicio/', Inicio, name='autos-inicio'),
     path('modelos/', Autos, name='autos-modelos'),

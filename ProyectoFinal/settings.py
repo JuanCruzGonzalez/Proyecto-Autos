@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'PaginaAutos',
     'Accounts',
+    
 ]
 
 MIDDLEWARE = [
@@ -127,7 +128,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #URL PARA EL LOGIN
-LOGIN_URL= "/Accounts/login/"
+LOGIN_URL= "Accounts/login"
 
 MEDIA_URL='/media/'
 MEDIA_ROOT= os.path.join(BASE_DIR, "media")
