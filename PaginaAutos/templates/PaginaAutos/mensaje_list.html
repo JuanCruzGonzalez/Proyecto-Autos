@@ -1,0 +1,14 @@
+{% extends 'PaginaAutos/index.html'%}
+
+{% block contenido %}
+{% load static %}
+<section class="menu section-padding">
+    {% for m in object_list %}
+            <li id="header">
+                <span><h7>{{m.mensaje}}</h7></span>
+            </li>
+            <br>
+    {% endfor %}
+</section>
+{% endblock %}
+

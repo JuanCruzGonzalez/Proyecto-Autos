@@ -71,7 +71,7 @@ class MensajeCrear(LoginRequiredMixin,CreateView):
     
 class MensajeLista(ListView):
     model = Mensaje
-    template_name = 'PaginaAutos/agregar_imagen.html'
+    template_name = '/chat/list'
 
 def Login(request):
 
@@ -107,7 +107,7 @@ def registrar_usuario(request):
             formulario.save()
             return redirect("autos-inicio")
         else:
-            return render(request, "PaginaAutos/register.html", {"form": formulario, "errors": formulario})
+            return render(request, "PaginaAutos/register.html", {"form": formulario, "errors": formulario.errors})
 
     formulario = UserRegisterForm()
 

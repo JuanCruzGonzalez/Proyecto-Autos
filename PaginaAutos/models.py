@@ -13,6 +13,8 @@ class Auto(models.Model):
     
 class Mensaje(models.Model):
     mensaje=models.CharField(max_length=150)
+    def __str__(self) -> str:
+        return f'{self.mensaje}'
 
 class Marca(models.Model):
     nombre = models.CharField(max_length=100)
