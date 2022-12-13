@@ -9,6 +9,7 @@ urlpatterns = [
     path('chat/', MensajeCrear.as_view(), name='autos-chat'),
     path('contacto/', Contacto, name='contacto'),
     path('autos/crear/', AutoCrear.as_view(), name="autos-crear"),
+    path('autos/crear/', AutoCrear.as_view(), name="autos-crear"),
     path('autos/detalle/<pk>', AutoDetalle.as_view(), name="autos-detalle"),
     path('autos/list/', AutosLista.as_view(), name="autos-list"),
     path('autos/actualizar/<pk>', AutosUpdate.as_view(), name="autos-update"),

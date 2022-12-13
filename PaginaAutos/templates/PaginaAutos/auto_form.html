@@ -1,59 +1,24 @@
 {% extends 'PaginaAutos/index.html'%}
 
 {% block contenido %}
-<div class="d-flex justify-content-center align-items-center">
-    <div class="ps-5 bg-white rounded text-secondary" style="width: 35rem; height: 19em;">
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
 
-    <form method = "post" enctype="multipart/form-data"> 
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="pe-5 ps-5 rounded bg-white text-secondary shadow" style="width: 30rem">
+            <center><h2 class="text-black">Crear Auto</h2></center>
+            {% for field in form %}
+             <div class="mt-3">
+                <label class="label-control">{{ field.label }}</label><br>
+                {{ field }}
+            </div>
 
-        {% csrf_token %}
-        <center class="btn-custom btn btn-danger" style="height: 46px; margin-top: 10px; margin-bottom: 4px;">
-            {{ form.non_field_errors }}
-            <div class="fieldWrapper">
-                {{ form.errors }}
-                {{ form.nombre.label_tag }}
-                {{ form.nombre }}
-                <span class="helptext">{{ form.help_text }}</span>
+            {% endfor %}
+            <div class="d-flex gap-2 justify-content-center mt-3 mb-3">
+                <input type="submit" class="btn btn-danger border" value="Crear">
             </div>
-        </center>
-        <center class="btn-custom btn btn-danger" style="height: 46px;margin-bottom: 4px;">
-            {{ form.non_field_errors }}
-            <div class="fieldWrapper">
-                {{ form.errors }}
-                {{ form.marca.label_tag }}
-                {{ form.marca }}
-                <span class="helptext">{{ form.help_text }}</span>
-            </div>
-        </center>
-        <center class="btn-custom btn btn-danger" style="height: 46px;margin-bottom: 4px;">
-            {{ form.non_field_errors }}
-            <div class="fieldWrapper">
-                {{ form.errors }}
-                {{ form.modelo.label_tag }}
-                {{ form.modelo }}
-                <span class="helptext">{{ form.help_text }}</span>
-            </div>
-        </center>
-        <center class="btn-custom btn btn-danger" style="height: 46px;margin-bottom: 4px;">
-            {{ form.non_field_errors }}
-            <div class="fieldWrapper">
-                {{ form.errors }}
-                {{ form.motor.label_tag }}
-                {{ form.motor }}
-            <span class="helptext">{{ form.help_text }}</span>
-            </div>
-        </center>
-        <center class="btn-custom btn btn-danger" style="height: 46px;margin-bottom: 4px;">
-            {{ form.non_field_errors }}
-            <div class="fieldWrapper">
-                {{ form.errors }}
-                {{ form.imagen.label_tag }}
-                {{ form.imagen }}
-                <span class="helptext">{{ form.help_text }}</span>
-            </div>
-        </center>
-        <input type="submit" value="Crear/Actualizar" class="btn-success" style="margin-bottom: 10px;">
-    </form>
-</div>
-</div>
+        </div>
+    </div>
+</form>
+
 {% endblock %}

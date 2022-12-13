@@ -60,8 +60,6 @@ class AutosBorrar(DeleteView):
     model= Auto
     success_url = '/autos/inicio'
 
-def CrearAutos(request):
-    return render(request, "PaginaAutos/crear_autos.html")
 
 class MensajeCrear(LoginRequiredMixin,CreateView):
     login_url="/autos/Inicio-sesion/"

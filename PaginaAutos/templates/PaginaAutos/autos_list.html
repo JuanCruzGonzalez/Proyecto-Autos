@@ -20,7 +20,7 @@
     </style>
 </head>
 
-<section class="menu section-padding">
+<div class="menu rounded bg-white text-secondary shadow align-items-center" style="position:relative; width: 49%;">
     <div style="position:relative; bottom:10px; right:0px;">
         {% load static %}
         <h3 style="margin-left: 40px;">Buscar Auto</h3>
@@ -31,9 +31,10 @@
             <input type="text" required name="nombre" class="text">  
         </form>
     </div>
-    <br><br>
-    <div style="position:relative; bottom:170px; left: 760px;">
-    <h3 style="margin-left: 20px;">Lista de Autos</h3 style="margin-left: 20px;">
+</div>
+<div class="rounded bg-white text-secondary shadow align-items-center" style="position:relative; bottom:115px; left: 50%; width: 49%;top: 50%;">
+    <div >
+    <center><h3 style="margin-left: 20px;">Lista de Autos</h3></center>
 
     <ul>
         {% for auto in object_list %}
