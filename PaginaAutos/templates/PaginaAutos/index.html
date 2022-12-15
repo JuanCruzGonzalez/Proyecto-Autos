@@ -26,6 +26,21 @@
             background-color: #ddd;
             padding: 80px 16px 16px 16px;
             }
+            .custom-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            }
+            .div_red{
+                background-color:#f62b53;
+                border-radius: 20px;
+                word-wrap: break-word;
+                height: 250px;
+                width: 500px;
+            }
         </style>
     </head>
     
@@ -68,7 +83,7 @@
                 </div>
                 {% if request.user.is_authenticated %}
                     <a class="custom-btn btn btn-danger" href="{% url 'auth-logout'%}">Logout</a>
-                    <a class="text muted small mb-4 mb-lg-0" href="{% url 'auth-edit' %}"> Hola {{request.user}}</a>
+                    <h6 class="text muted small mb-4 mb-lg-0" style="margin-left: 5px;">Hola {{request.user}}</h6>
                     <img src="{{imagen_url}}" style="max-width: 15px;">
                 {% else %}
                 <div class="d-none d-lg-block">
@@ -108,80 +123,21 @@
                     <div class="row">
 
                         <div class="col-12">
-                            <h2 class="text-center mb-lg-5 mb-4">Marcas Favoritas</h2>
+                            {% if request.user.is_authenticated %}
+                                <h2 class="text-center mb-lg-5 mb-4">Bienvenido {{request.user}}</h2>
+                            {% else %}
+                                <h2 class="text-center mb-lg-5 mb-4">Bienvenido</h2>
+                            {% endif %}
                         </div>
-
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="menu-thumb">
-                                <div class="menu-image-wrap">
-                                    <img><img src="{% static 'PaginaAutos/images/ford.jpg' %}" class="img-fluid menu-image" alt=""></img>
-                                </div>
-
-                                <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Ford</h4>
-                                </div>
-                            </div>
+                        <div class="div_red" style="position:relative; bottom:0px; right:5px; left: 600px;">
+                                <h5 class="text-center mb-lg-5 mb-4">Cars Library es una pagina donde puedes buscar los mejores autos de las mejores marcas <br> sientete libre de buscar autos para poder saber lo mejor de cada uno
+                                </h5>
                         </div>
-
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="menu-thumb">
-                                <div class="menu-image-wrap">
-                                    <img><img src="{% static 'PaginaAutos/images/chevrolet.jpg' %}" class="img-fluid menu-image" alt=""></img>
-                                </div>
-
-                                <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Chevrolet</h4>
-                                </div>
-                            </div>
+                        <div style="position:relative; bottom:250px; right:0px;">
+                            <img src="{% static 'PaginaAutos/images/OIP.jpg'%}" style="position: absolute; border-radius: 10px;">
                         </div>
-
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="menu-thumb">
-                                <div class="menu-image-wrap">
-                                    <img><img src="{% static 'PaginaAutos/images/audis.jpg' %}" class="img-fluid menu-image" alt=""></img>
-                                </div>
-
-                                <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Audi</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="menu-thumb">
-                                <div class="menu-image-wrap">
-                                    <img><img src="{% static 'PaginaAutos/images/ferrari.jpg' %}" class="img-fluid menu-image" alt=""></img>
-                                </div>
-
-                                <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Ferrari</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="menu-thumb">
-                                <div class="menu-image-wrap">
-                                    <img><img src="{% static 'PaginaAutos/images/lamborgini.jpg' %}" class="img-fluid menu-image" alt=""></img>
-                                </div>
-
-                                <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Lamborgini</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="menu-thumb">
-                                <div class="menu-image-wrap">
-                                    <img><img src="{% static 'PaginaAutos/images/volkswagen.jpg' %}" class="img-fluid menu-image" alt=""></img>
-                                </div>
-
-                                <div class="menu-info d-flex flex-wrap align-items-center">
-                                    <h4 class="mb-0">Volkswagen</h4>
-                                </div>
-                            </div>
-                        </div>
+                        <br><br>
+                        <center><h6>Recuerda que puedes ver las marcas con las que trabajamos puedes visitar el apartado de <a href="{% url 'autos-marcas' %}">marcas</a></h6></center>
 
                     </div>
                 </div>

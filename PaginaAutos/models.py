@@ -12,3 +12,14 @@ class Auto(models.Model):
         
 class Mensaje(models.Model):
     mensaje=models.CharField(max_length=150)
+    def __str__(self) -> str:
+        return f'{self.mensaje}'
+
+class Marca(models.Model):
+    nombre = models.CharField(max_length=100)
+    historia = models.CharField(max_length=100)
+    fecha_creacion = models.DateField()
+    pais = models.CharField(max_length=100)
+
+    def __str__(self) -> str:
+        return f"{self.nombre} Creada el: {self.fecha_creacion.year} en {self.pais}. {self.historia} "
