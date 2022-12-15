@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from PaginaAutos.models import *
 from PaginaAutos.forms import *
+from Accounts.models import *
 
 from django.views.generic import *
 from django.contrib.auth.forms import AuthenticationForm
@@ -10,7 +11,14 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def Inicio(request):
-    return render(request, 'PaginaAutos/index.html')
+
+    if request.user.is_authenticated:
+        imagen_model = Avatar.objects.filter(user = request.user.id)[0]
+        imagen_url = imagen_model.imagen.url
+    else :
+        imagen_url = ""
+
+    return render(request, 'PaginaAutos/index.html', {"imagen_url": imagen_url})
 
 def Autos(request):
     return render(request, 'PaginaAutos/autos.html')
@@ -38,7 +46,7 @@ def resultado_buscar_autos(request):
 
 
 class AutoCrear(LoginRequiredMixin,CreateView):
-    login_url="/autos/Inicio-sesion/"
+    login_url="/Accounts/Inicio-sesion"
     model = Auto
     success_url = '/autos/inicio'
     fields = ['nombre', 'marca', 'motor', 'modelo', 'imagen']
@@ -61,11 +69,23 @@ class AutosBorrar(DeleteView):
     success_url = '/autos/inicio'
 
 
-class MensajeCrear(LoginRequiredMixin,CreateView):
-    login_url="/autos/Inicio-sesion/"
-    model = Mensaje
-    success_url = '/autos/chat'
-    fields = ['mensaje']
+def mensaje(request):
+    if request.method=="POST":
+
+        formulario= MensajeFormulario(request.POST, files=request.FILES)
+        if formulario.is_valid():
+            data=formulario.cleaned_data
+
+            usuario=request.user
+
+            mess=Mensaje(user=usuario, mensaje=data["mensaje"])
+            mess.save()
+
+            return render(request, 'PaginaAutos/mensaje_form.html',{"form":formulario, "errors":formulario.errors})
+        
+    formulario= MensajeFormulario()
+
+    return render(request, 'PaginaAutos/mensaje_form.html',{"form":formulario} )
     
 class MensajeLista(ListView):
     model = Mensaje
@@ -96,20 +116,6 @@ def Login(request):
     formulario = AuthenticationForm()
     return render(request, "PaginaAutos/login.html", {"form":formulario, "errors": errors}) 
 
-def registrar_usuario(request):
-    if request.method == "POST":
-        formulario = UserRegisterForm(request.POST)
-
-        if formulario.is_valid():
-            
-            formulario.save()
-            return redirect("autos-inicio")
-        else:
-            return render(request, "PaginaAutos/register.html", {"form": formulario, "errors": formulario.errors})
-
-    formulario = UserRegisterForm()
-
-    return render(request, "PaginaAutos/register.html", {"form": formulario})
 
 class MarcaDetalle(DetailView):
     model = Marca

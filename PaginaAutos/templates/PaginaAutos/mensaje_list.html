@@ -5,7 +5,9 @@
 <section class="menu section-padding">
     {% for m in object_list %}
             <li id="header">
-                <span><h7>{{m.mensaje}}</h7></span>
+                <span><h7>{{m.user}}</h7></span>|
+                <span><h7>{{m.tiempo}}</h7></span>|
+                <span><h7>{{m.mensaje}}</h7></span>                
             </li>
             <br>
     {% endfor %}

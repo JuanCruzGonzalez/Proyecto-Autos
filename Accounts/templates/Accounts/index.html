@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Cars Library</title>
+
+        <!-- CSS FILES -->    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">                    
+        <link href="{% static 'PaginaAutos/css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'PaginaAutos/css/bootstrap-icons.css' %}" rel="stylesheet">
+
+        <link href="{% static 'PaginaAutos/css/tooplate-crispy-kitchen.css' %}" rel="stylesheet">
+        <style>
+            body {
+            background-color: #ddd;
+            padding: 80px 16px 16px 16px;
+            }
+            .custom-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            }
+            .div_vert{
+            background-color:#f62b53;
+            word-wrap: break-word;
+            padding-right: 15px;
+            padding-bottom: 22px;
+            }
+            .div_horizontal{
+            background-color:#f62b53;
+            word-wrap: break-word;
+            padding-left: 105px;
+            padding-bottom: 22px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        
+        <nav class="navbar navbar-expand-lg bg-white shadow-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <a class="navbar-brand" href="{% url 'autos-inicio' %}">
+                    Cars Library
+                </a>
+
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'autos-modelos' %}">Autos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'autos-chat' %}">Chat Global</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'autos-marcas' %}">Marcas</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'sobre-nosotros' %}">Sobre Nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+                {% if request.user.is_authenticated %}
+                    <a class="custom-btn btn btn-danger" href="{% url 'auth-logout'%}">Logout</a>
+                    <h6 class="text muted small mb-4 mb-lg-0" style="margin-left: 5px;">Hola {{request.user}}</h6>
+                    <img src="{{imagen_url}}" style="max-width: 15px;">
+                {% else %}
+                <div class="d-none d-lg-block">
+                    <a class="custom-btn btn btn-danger" href="{% url 'auth-login' %}">Login</a>
+                    <a class="custom-btn btn btn-danger" href="{% url 'auth-register' %}">Register</a> 
+                </div>
+                {% endif %}
+
+            </div>
+        </nav>
+        
+    <main>
+        <section >
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-7 col-12 m-auto">
+                        <div class="heroText">
+
+                            <center><h1 class="text-white mb-lg-5 mb-3">Cars Library</h1></center>
+                        </div>
+                    </div>
+                    <div class="video-wrap">
+                        <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                            <source src="{% static 'PaginaAutos/images/videoplayback.mp4'%}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                    </div>    
+
+                </div>
+            </div>
+        </section>
+        {% block contenido %}
+
+            <section class="menu section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            {% if request.user.is_authenticated %}
+                                <h2 class="text-center mb-lg-5 mb-4">Bienvenido {{request.user}}</h2>
+                            {% else %}
+                                <h2 class="text-center mb-lg-5 mb-4">Bienvenido</h2>
+                            {% endif %}
+                        </div>
+                        <div style="position:relative; bottom:0px; right:5px; left: 600px; height: 240px; width: 500px;">
+                                <h6 class="text-center mb-lg-5 mb-4">Cars Library es una pagina donde puedes buscar los mejores autos de las mejores marcas <br> sientete libre de buscar autos para poder saber lo mejor de cada uno
+                                </h6>
+                        </div>
+                        <div style="position:relative; bottom:250px; left:25px;">
+                            <img src="{% static 'PaginaAutos/images/OIP.jpg'%}" style="position: absolute; border-radius: 10px;">
+                        </div>
+                        <br><br>
+                        <center><h6>Recuerda que puedes ver las marcas con las que trabajamos puedes visitar el apartado de <a href="{% url 'autos-marcas' %}">marcas</a></h6></center>
+                        <div class="div_vert" style="bottom: 15px; position: absolute; left: 15px; right: 15px;"></div>
+                        <div class="div_horizontal" style="bottom: 15px; position: absolute; left: 15px; right: 15px;"></div>
+                    </div>
+                </div>
+            </section>
+        {% endblock %}
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
+</html>

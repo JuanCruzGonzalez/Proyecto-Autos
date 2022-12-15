@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'PaginaAutos',
+    'Accounts',
+    
 ]
 
 MIDDLEWARE = [
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'ProyectoFinal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r"C:\Users\juanc\Desktop\2129_crispy_kitchen\ProyectoFinal\PaginaAutos\templates"],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,7 +128,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #URL PARA EL LOGIN
-LOGIN_URL= "/PaginaAutos/login/"
+LOGIN_URL= "Accounts/login"
 
 MEDIA_URL='/media/'
-MEDIA_ROOT= os.path.join(BASE_DIR, "media")
+MEDIA_ROOT= os.path.join(BASE_DIR, "media/profiles")

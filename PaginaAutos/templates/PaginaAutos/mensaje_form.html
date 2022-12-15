@@ -18,14 +18,14 @@
                 <center class="btn-custom btn btn-danger text-white" style="height: 46px;">{{ form.non_field_errors }}
                     <div class="fieldWrapper">
                       {{ form.errors }}
-                      {{ form.label_tag }}
-                      {{ form }}
+                      {{ form.mensaje.label_tag }}
+                      {{ form.mensaje }}
                       <span class="helptext">{{ form.help_text }}</span>
                     </div></center>
             </div>
             <br>
-            <input type="submit" value="Enviar" class="btn-success">
-            <a class="nav-link" href="{% url 'chat-list' %}">Ver mensajes de usuarios</a>
+            <input type="submit" value="Enviar" class="btn-success"><br><br><br>
+            <a class="custom-btn btn btn-success" href="{% url 'chat-list' %}">Ver mensajes de usuarios</a>
         </form>
         
     </ul>

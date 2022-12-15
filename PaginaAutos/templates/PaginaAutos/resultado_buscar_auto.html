@@ -1,11 +1,31 @@
 {% extends 'PaginaAutos/index.html'%}
 
 {% block contenido %}
-<section class="menu section-padding">
+<head>
+    <style>
+        .custom-btn2 {
+        border: 0;
+        color: var(--white-color);
+        font-size: var(--menu-font-size);
+        padding: 3px 10px;
+        }
+        #header h5 { display:inline; }
+    </style>
+</head>
+<div class="rounded bg-white text-secondary shadow align-items-center" style="position:relative; bottom:50%; left: 25%; width: 49%;top: 50%;">
+    <div >
+    <center><h3 style="margin-left: 20px;">Lista de Autos</h3></center>
+    <center>
     <ul>
         {% for auto in autos %}
-        <li style=color:black><h4>{{auto.nombre}}--{{auto.marca}}-{{auto.modelo}}</h4></li>
+            <ul id="header">
+                <span><h5>{{auto.nombre}}</h5></span>
+                <a href="{% url 'autos-detalle' auto.id%}" class="custom-btn2 btn-primary">Detalle</a>
+                <a href="{% url 'autos-borrar' auto.id%}" class="custom-btn2 btn-danger">Borrar</a>
+                <a href="{% url 'autos-update' auto.id%}" class="custom-btn2 btn-success">Actualizar</a>
+            </ul>
+            <br>
         {% endfor %}
-    </ul>
-</section>
+    </ul></center>
+    </div>
 {% endblock %}
