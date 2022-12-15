@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from PaginaAutos.models import *
 from PaginaAutos.forms import *
+from Accounts.models import *
 
 from django.views.generic import *
 from django.contrib.auth.forms import AuthenticationForm
@@ -10,7 +11,14 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def Inicio(request):
-    return render(request, 'PaginaAutos/index.html')
+
+    if request.user.is_authenticated:
+        imagen_model = Avatar.objects.filter(user = request.user.id)[0]
+        imagen_url = imagen_model.imagen.url
+    else :
+        imagen_url = ""
+
+    return render(request, 'PaginaAutos/index.html', {"imagen_url": imagen_url})
 
 def Autos(request):
     return render(request, 'PaginaAutos/autos.html')
