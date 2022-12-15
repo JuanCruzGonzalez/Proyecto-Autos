@@ -7,6 +7,7 @@ urlpatterns = [
     path('modelos/', Autos, name='autos-modelos'),
     path('marcas/', Marcas, name='autos-marcas'),
     path('chat/', MensajeCrear.as_view(), name='autos-chat'),
+    path('chat/list', MensajeLista.as_view(), name='chat-list'),
     path('contacto/', Contacto, name='contacto'),
     path('autos/crear/', AutoCrear.as_view(), name="autos-crear"),
     path('autos/crear/', AutoCrear.as_view(), name="autos-crear"),
