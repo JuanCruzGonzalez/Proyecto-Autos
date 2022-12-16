@@ -43,7 +43,7 @@ class AutoCrear(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
     permission_required = 'can_add_imagen_auto'
     login_url="/Accounts/Inicio-sesion"
     model = Auto
-    success_url = '/autos/inicio'
+    success_url = '/autos/modelos'
     fields = ['nombre', 'marca', 'motor', 'modelo', 'imagen']
 
 class AutosLista(ListView):
@@ -57,13 +57,13 @@ class AutoDetalle(DetailView):
 class AutosUpdate(PermissionRequiredMixin, UpdateView):
     permission_required = 'can_change_imagen_auto'
     model= Auto
-    success_url = '/autos/inicio'
+    success_url = '/autos/modelos'
     fields = ['nombre', 'marca', 'motor', 'modelo', 'imagen']
 
 class AutosBorrar(PermissionRequiredMixin, DeleteView):
     permission_required = 'can_delete_imagen_auto'
     model= Auto
-    success_url = '/autos/inicio'
+    success_url = '/autos//modelos'
 
 @login_required(login_url='/Accounts/Inicio-sesion')
 def mensaje(request):   
