@@ -4,7 +4,6 @@
 {% block contenido %}
 {% load static %}
 
-
 <section class="menu section-padding">
     <center><h2 style="color:black">Marcas</h2></center>
     <center><h6 style="color:black">En este espacio puede ver todas la marcas de autos que tenemos en esta pagina</h6></center>
@@ -16,9 +15,13 @@
                     <div class="menu-image-wrap">
                         <img><img src="{% static 'PaginaAutos/images/ford.jpg' %}" class="img-fluid menu-image" alt=""></img>
                     </div>
-
+                    
                     <div class="menu-info d-flex flex-wrap align-items-center">
-                        <h4 class="mb-0">Ford</h4>
+                        {% for marca in object_list %}
+                        {% if marca.nombre == 'Ford' %}
+                        <a href="{% url 'marcas-detalle' marca.id%}"  class="mb-0"><h4>{{ marca.nombre }}</h4></a>
+                        {%endif%}
+                        {%endfor%}
                     </div>
                 </div>
             </div>
@@ -30,7 +33,11 @@
                     </div>
 
                     <div class="menu-info d-flex flex-wrap align-items-center">
-                        <h4 class="mb-0">Chevrolet</h4>
+                        {% for marca in object_list %}
+                        {% if marca.nombre == 'Chevrolet' %}
+                        <a href="{% url 'marcas-detalle' marca.id%}"  class="mb-0"><h4>{{ marca.nombre }}</h4></a>
+                        {%endif%}
+                        {%endfor%}
                     </div>
                 </div>
             </div>
@@ -42,7 +49,11 @@
                     </div>
 
                     <div class="menu-info d-flex flex-wrap align-items-center">
-                        <h4 class="mb-0">Audi</h4>
+                        {% for marca in object_list %}
+                        {% if marca.nombre == 'Audi' %}
+                        <a href="{% url 'marcas-detalle' marca.id%}"  class="mb-0"><h4>{{ marca.nombre }}</h4></a>
+                        {%endif%}
+                        {%endfor%}
                     </div>
                 </div>
             </div>
@@ -54,7 +65,11 @@
                     </div>
 
                     <div class="menu-info d-flex flex-wrap align-items-center">
-                        <h4 class="mb-0">Ferrari</h4>
+                        {% for marca in object_list %}
+                        {% if marca.nombre == 'Ferrari' %}
+                        <a href="{% url 'marcas-detalle' marca.id%}"  class="mb-0"><h4>{{ marca.nombre }}</h4></a>
+                        {%endif%}
+                        {%endfor%}
                     </div>
                 </div>
             </div>
@@ -66,7 +81,11 @@
                     </div>
 
                     <div class="menu-info d-flex flex-wrap align-items-center">
-                        <h4 class="mb-0">Lamborgini</h4>
+                        {% for marca in object_list %}
+                        {% if marca.nombre == 'Lamborgini' %}
+                        <a href="{% url 'marcas-detalle' marca.id%}"  class="mb-0"><h4>{{ marca.nombre }}</h4></a>
+                        {%endif%}
+                        {%endfor%}
                     </div>
                 </div>
             </div>
@@ -78,7 +97,11 @@
                     </div>
 
                     <div class="menu-info d-flex flex-wrap align-items-center">
-                        <h4 class="mb-0">Volkswagen</h4>
+                        {% for marca in object_list %}
+                        {% if marca.nombre == 'Volkswagen' %}
+                        <a href="{% url 'marcas-detalle' marca.id%}"  class="mb-0"><h4>{{ marca.nombre }}</h4></a>
+                        {%endif%}
+                        {%endfor%}
                     </div>
                 </div>
             </div>
@@ -96,7 +119,11 @@
                     </div>
 
                     <div class="menu-info d-flex flex-wrap align-items-center">
-                        <h4 class="mb-0">Renault</h4>
+                        {% for marca in object_list %}
+                        {% if marca.nombre == 'Renault' %}
+                        <a href="{% url 'marcas-detalle' marca.id%}"  class="mb-0"><h4>{{ marca.nombre }}</h4></a>
+                        {%endif%}
+                        {%endfor%}
                     </div>
                 </div>
             </div>
@@ -108,7 +135,11 @@
                     </div>
 
                     <div class="menu-info d-flex flex-wrap align-items-center">
-                        <h4 class="mb-0">Honda</h4>
+                        {% for marca in object_list %}
+                        {% if marca.nombre == 'Honda' %}
+                        <a href="{% url 'marcas-detalle' marca.id%}"  class="mb-0"><h4>{{ marca.nombre }}</h4></a>
+                        {%endif%}
+                        {%endfor%}
                     </div>
                 </div>
             </div>
@@ -120,7 +151,11 @@
                     </div>
 
                     <div class="menu-info d-flex flex-wrap align-items-center">
-                        <h4 class="mb-0">Toyota</h4>
+                        {% for marca in object_list %}
+                        {% if marca.nombre == 'Toyota' %}
+                        <a href="{% url 'marcas-detalle' marca.id%}"  class="mb-0"><h4>{{ marca.nombre }}</h4></a>
+                        {%endif%}
+                        {%endfor%}
                     </div>
                 </div>
             </div>
@@ -132,7 +167,11 @@
                     </div>
 
                     <div class="menu-info d-flex flex-wrap align-items-center">
-                        <h4 class="mb-0">Peugeot</h4>
+                        {% for marca in object_list %}
+                        {% if marca.nombre == 'Peugeot' %}
+                        <a href="{% url 'marcas-detalle' marca.id%}"  class="mb-0"><h4>{{ marca.nombre }}</h4></a>
+                        {%endif%}
+                        {%endfor%}
                     </div>
                 </div>
             </div>
@@ -144,7 +183,11 @@
                     </div>
 
                     <div class="menu-info d-flex flex-wrap align-items-center">
-                        <h4 class="mb-0">Fiat</h4>
+                        {% for marca in object_list %}
+                        {% if marca.nombre == 'Fiat' %}
+                        <a href="{% url 'marcas-detalle' marca.id%}"  class="mb-0"><h4>{{ marca.nombre }}</h4></a>
+                        {%endif%}
+                        {%endfor%}
                     </div>
                 </div>
             </div>
@@ -156,7 +199,11 @@
                     </div>
 
                     <div class="menu-info d-flex flex-wrap align-items-center">
-                        <h4 class="mb-0">BMW</h4>
+                        {% for marca in object_list %}
+                        {% if marca.nombre == 'BMW' %}
+                        <a href="{% url 'marcas-detalle' marca.id%}"  class="mb-0"><h4>{{ marca.nombre }}</h4></a>
+                        {%endif%}
+                        {%endfor%}
                     </div>
                 </div>
             </div>

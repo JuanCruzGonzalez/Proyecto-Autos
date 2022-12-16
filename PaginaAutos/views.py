@@ -17,8 +17,8 @@ def Inicio(request):
 def Autos(request):
     return render(request, 'PaginaAutos/autos.html')
 
-def Marcas(request):
-    return render(request, 'PaginaAutos/marcas.html')
+#def Marcas(request):
+#    return render(request, 'PaginaAutos/marcas_list.html')
 
 
 def Nosotros(request):
@@ -118,3 +118,9 @@ class MarcaDetalle(DetailView):
     model = Marca
     template_name = 'PaginaAutos/marca_detalle.html'
     
+class MarcaLista(ListView):
+    model = Marca
+    template_name = '/marcas'
+
+#    def get_queryset(self):
+#        return Marca.objects.filter(nombre__icontains='Ford')[:5]
