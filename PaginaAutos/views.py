@@ -63,7 +63,7 @@ class AutosUpdate(PermissionRequiredMixin, UpdateView):
 class AutosBorrar(PermissionRequiredMixin, DeleteView):
     permission_required = 'can_delete_imagen_auto'
     model= Auto
-    success_url = '/autos//modelos'
+    success_url = '/autos/modelos'
 
 @login_required(login_url='/Accounts/Inicio-sesion')
 def mensaje(request):   
