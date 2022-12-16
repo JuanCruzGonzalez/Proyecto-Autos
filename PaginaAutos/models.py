@@ -26,3 +26,10 @@ class Marca(models.Model):
 
     def __str__(self) -> str:
         return f"{self.nombre} Creada el: {self.fecha_creacion.year} en {self.pais}. {self.historia} "
+
+
+class AutoInstance(models.Model):
+    ...
+    class Meta:
+        ...
+        permissions = (("can_add_imagen_auto", "Agregar una imagen de auto"),("can_change_imagen_auto", "Cambiar una imagen de auto"), ("can_delete_imagen_auto", "Borrar una imagen de auto"))

@@ -41,8 +41,10 @@
             <li id="header">
                 <span><h5>{{auto.nombre}}</h5></span>
                 <a href="{% url 'autos-detalle' auto.id%}" class="custom-btn2 btn-primary">Detalle</a>
+                {% if user.is_staff %}
                 <a href="{% url 'autos-borrar' auto.id%}" class="custom-btn2 btn-danger">Borrar</a>
                 <a href="{% url 'autos-update' auto.id%}" class="custom-btn2 btn-success">Actualizar</a>
+                {% endif %}
             </li>
             <br>
         {% endfor %}

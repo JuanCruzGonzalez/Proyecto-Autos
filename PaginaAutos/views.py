@@ -8,6 +8,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
 # Create your views here.
 def Inicio(request):
@@ -38,7 +39,8 @@ def resultado_buscar_autos(request):
             return render(request, 'PaginaAutos/resultado_buscar_auto.html',{"autos":[]})
 
 
-class AutoCrear(LoginRequiredMixin,CreateView):
+class AutoCrear(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
+    permission_required = 'can_add_imagen_auto'
     login_url="/Accounts/Inicio-sesion"
     model = Auto
     success_url = '/autos/inicio'
@@ -52,12 +54,14 @@ class AutoDetalle(DetailView):
     model = Auto
     template_name = 'PaginaAutos/auto_detalle.html'
 
-class AutosUpdate(UpdateView):
+class AutosUpdate(PermissionRequiredMixin, UpdateView):
+    permission_required = 'can_change_imagen_auto'
     model= Auto
     success_url = '/autos/inicio'
     fields = ['nombre', 'marca', 'motor', 'modelo', 'imagen']
 
-class AutosBorrar(DeleteView):
+class AutosBorrar(PermissionRequiredMixin, DeleteView):
+    permission_required = 'can_delete_imagen_auto'
     model= Auto
     success_url = '/autos/inicio'
 

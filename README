@@ -22,3 +22,15 @@ Victor Cuba, encargado de crear el login, register, logout, y la sesión del usu
 
 *** CASOS DE PRUEBA ***
 https://docs.google.com/spreadsheets/d/1Qey8YasAFL3QKm8DdWnHqDt2kFH5oIGjlIglhlVlVOE/edit?usp=sharing
+
+
+*** PARA PRUEBAS DE PERMISOS DE SUPERUSUARIO ***
+
+unicamente el administrador puede crear, actualizar y eliminar la informacion del auto.
+
+user: Administrador
+pass: admin1234
+
+otro usuario puede ser creado por usted o utilizar 
+user: fd 
+pass: jose12345678
