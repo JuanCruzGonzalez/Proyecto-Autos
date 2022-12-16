@@ -42,7 +42,7 @@ def registrar_usuario(request):
             formulario.save()
             return redirect("autos-inicio")
         else:
-            return render(request, "Accounts/register.html", {"form": formulario, "errors": formulario})
+            return render(request, "Accounts/register.html", {"form": formulario, "errors": formulario.errors})
 
     formulario = UserRegisterForm()
 

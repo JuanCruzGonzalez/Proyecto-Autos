@@ -12,7 +12,7 @@
     </div>
     </div>
     <ul>
-        <form method="post">
+        <form onReset="función" method="post">
             {% csrf_token %}
             <div>
                 <center class="btn-custom btn btn-danger text-white" style="height: 46px;">{{ form.non_field_errors }}

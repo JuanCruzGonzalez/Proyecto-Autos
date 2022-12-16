@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 class AvatarForm(forms.Form):
-    imagen= forms.ImageField()
+    imagen= forms.ImageField(required=False)
 
 class UserRegisterForm(UserCreationForm):
     username = forms.CharField(label='Usuario', widget=forms.TextInput(attrs={'class': 'form-control'}))

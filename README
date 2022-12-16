@@ -1,13 +1,24 @@
-Proyecto Coder
+*** PROYECTO CODER ***
 
-Integrantes:
+Somos un grupo de tres estudiantes de CoderHouse en Python, en la busqueda del proyecto se nos ocurrio un portal o blog de autos para entuciastas del medio. 
+El objetivo de la pagina es evacuar dudas de las personas sobre diferentes marcas y autos contenidos en el sitio. Ademas se proporciona un chat para que cada usuario logueado comparta informacion de utilidad para la comunidad.
+
+
+*** Integrantes: ****
 
 Juan Cruz Gonzalez
 Victor Mariano Cuba Larrain
 Felipe Da Rosa
 
-Soy Juan Cruz, lo que hice fue encargarme del Inicio de la pagina. Busque un template base y luego lo modifique para adaptarlo a la idea de la pagina de autos. Luego cree el inicio y las demas paginas de la barra de navegacion AUTOS/CHAT GLOBAL/MARCAS/CONTACTO/SOBRE NOSOTROS. le di funcionalidad a la pagina para que todo funcione correctamente. En el apartado de autos me encargue de creear modulo y formulario para poder buscar o creear los autos y tambien cree la pagina para listar los autos de la BD
 
-Felipe Da Rosa, realice la creacion del superusuario, para luego realizar gestion de permisos. Cuatro casos de prueba realizados y debidamente documentados (individualmente y en plantilla) en etapa temprana del desarrollo para subir en una carpeta a Github. Creacion de modelo y vistas marcas, con una descripcion en la base de datos para consultar en detalle breve historia de marcas. Revision de botones que funcionen en las paginas, en caso contrario direccionar a template "aun no hay paginas"
+*** TAREAS *** 
 
-Soy Victor Cuba, yo me encargué de crear el login, register, logout, y la sesión del usuario, crear los formularios y la funcionalidad de todos estos. Usando la documentación de boostrap logré hacer mi formulario responsive para que se pueda visualizar mejor de acuerdo a las dimensiones de la pantalla.
+Juan Cruz, encargado del Inicio de la pagina. Busquedaa de template base y sus modificaciones para adaptarlo a la idea del grupo para la pagina de autos. Creacion de inicio y demas paginas en barra de navegacion AUTOS/CHAT GLOBAL/MARCAS/CONTACTO/SOBRE NOSOTROS. Implementacion de correcta funcionalidad a la pagina. Creacion del modelo Auto asi como los forms para buscar, crear y listar autos, con su respectivo template.
+
+Felipe Da Rosa, encargado de la creacion del superusuario, para luego realizar gestion de permisos. Cuatro casos de prueba realizados y debidamente documentados (individualmente y en plantilla) en etapa temprana del desarrollo para subir en una carpeta a Github. Creacion de modelo y vistas marcas, con una descripcion en la base de datos para consultar en detalle breve historia de marcas. Actualizacion de informacion de autos de la base de datos inicial. Revision de botones que funcionen en las paginas, en caso contrario direccionar a template "aun no hay paginas". Creacion de modelo mensaje para listar los mensajes que el usuario escribe en el chat global para que los usuarios puedan una vez logueados evacuar distintas dudas viendo dichos mensajes.
+
+Victor Cuba, encargado de crear el login, register, logout, y la sesión del usuario, crear los formularios y la funcionalidad de todos estos. Usando la documentación de boostrap para lograr un formulario responsive para mejor visualizacion de acuerdo a las dimensiones de la pantalla.
+
+
+*** CASOS DE PRUEBA ***
+https://docs.google.com/spreadsheets/d/1Qey8YasAFL3QKm8DdWnHqDt2kFH5oIGjlIglhlVlVOE/edit?usp=sharing

@@ -11,14 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def Inicio(request):
-
-    if request.user.is_authenticated:
-        imagen_model = Avatar.objects.filter(user = request.user.id)[0]
-        imagen_url = imagen_model.imagen.url
-    else :
-        imagen_url = ""
-
-    return render(request, 'PaginaAutos/index.html', {"imagen_url": imagen_url})
+    return render(request, 'PaginaAutos/index.html')
 
 def Autos(request):
     return render(request, 'PaginaAutos/autos.html')
@@ -68,8 +61,8 @@ class AutosBorrar(DeleteView):
     model= Auto
     success_url = '/autos/inicio'
 
-
-def mensaje(request):
+@login_required(login_url='/Accounts/Inicio-sesion')
+def mensaje(request):   
     if request.method=="POST":
 
         formulario= MensajeFormulario(request.POST, files=request.FILES)
