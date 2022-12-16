@@ -21,11 +21,16 @@
             <ul id="header">
                 <span><h5>{{auto.nombre}}</h5></span>
                 <a href="{% url 'autos-detalle' auto.id%}" class="custom-btn2 btn-primary">Detalle</a>
+                {% if user.is_staff %}
                 <a href="{% url 'autos-borrar' auto.id%}" class="custom-btn2 btn-danger">Borrar</a>
                 <a href="{% url 'autos-update' auto.id%}" class="custom-btn2 btn-success">Actualizar</a>
+                {% endif %}
             </ul>
             <br>
         {% endfor %}
     </ul></center>
+    </div>
+    <div id="menu">
+        <p><a style="position:absolute; bottom:5px; right:5px;"href="{% url 'autos-list' %}" class="custom-btn btn btn-danger">Volver</a></p>
     </div>
 {% endblock %}
