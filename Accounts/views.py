@@ -55,14 +55,13 @@ def editarPerfil(request):
 
     if request.method == "POST":
         formulario = UserEditForm(request.POST)
-        if formulario.is_valid:
+        if formulario.is_valid():
             
-            información = formulario.cleaned_data
-
-            usuario.email = información['email']
-            usuario.password1 = información['password1']
-            usuario.password2 = información['password2']
-            usuario.save
+            informacion = formulario.cleaned_data
+            usuario.email = informacion['email']
+            usuario.password1 = informacion['password1']
+            usuario.password2 = informacion['password2']
+            usuario.save()
 
             return render(request, "Accounts/index.html")
 

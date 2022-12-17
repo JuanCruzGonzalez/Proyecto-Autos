@@ -22,10 +22,11 @@
 <section class="menu section-padding">
     <div id="Power-Contenedor">
     <center><h1 class="text-black mb-lg-5 mb-3">Autos</h1></center>
-
+    {% if user.is_staff %}
     <a href="{% url 'autos-crear' %}" class="custom-btn btn btn-danger" id="Power-Contenedor">
         Crear Auto
     </a>
+    {%endif%}
     <a href="{% url 'autos-list' %}" class="custom-btn btn btn-danger" id="Power-Contenedor">
         Buscar Auto
     </a>
