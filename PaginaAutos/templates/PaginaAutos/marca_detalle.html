@@ -3,13 +3,14 @@
 {% block contenido %}
 <section class="menu section-padding">
 
-    <p>Informacion sobre {{object.nombre}}: 
+   <center> <p> <h5> Informacion sobre la marca {{object.nombre}} </h5> </center>
         <p>
-            Creada en {{object.pais}}, en {{object.fecha_creacion.year}}.
+            Su origen es {{object.pais}}, en {{object.fecha_creacion.year}}.
+        <br> {{object.historia}}
         </p>
-        <p>
-            {{object.historia}}
-        </p>
+        <div id="menu">
+            <p><a style="position:absolute; bottom:50px; right:50px;"href="{% url 'marcas-list' %}" class="custom-btn btn btn-danger">Volver a Marcas</a></p>
+        </div>
 
 </section>
 {% endblock %}
