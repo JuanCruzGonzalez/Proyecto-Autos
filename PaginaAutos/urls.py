@@ -5,7 +5,6 @@ from Accounts.urls import *
 urlpatterns = [
     path('inicio/', Inicio, name='autos-inicio'),
     path('modelos/', Autos, name='autos-modelos'),
-    #path('marcas/', Marcas, name='autos-marcas'),
     path('marcas/', MarcaLista.as_view(), name='marcas-list'),
     path('chat/', mensaje, name='autos-chat'),
     path('chat/list', MensajeLista.as_view(), name='chat-list'),
