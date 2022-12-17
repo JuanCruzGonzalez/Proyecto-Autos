@@ -17,13 +17,13 @@ class UserRegisterForm(UserCreationForm):
         model = User
         fields = ['first_name','last_name', 'email', 'username','password1', 'password2']
 
-class UserEditForm(UserCreationForm):
+class UserEditForm(forms.Form):
     username = forms.CharField(label='Modificar username', widget=forms.TextInput(attrs={'class': 'form-control'}))
     first_name = forms.CharField(label='Modificar nombre', widget=forms.TextInput(attrs={'class': 'form-control'}))
     last_name= forms.CharField(label='Modificar apellido', widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.EmailField(label='Modificar E-mail',  widget=forms.EmailInput(attrs={'class': 'form-control'}))
-    password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
-    password2 = forms.CharField(label='Repetir la contraseña',  widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    #password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    #password2 = forms.CharField(label='Repetir la contraseña',  widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
     class Meta:
         

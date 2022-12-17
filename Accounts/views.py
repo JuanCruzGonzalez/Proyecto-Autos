@@ -58,9 +58,12 @@ def editarPerfil(request):
         if formulario.is_valid():
             
             informacion = formulario.cleaned_data
+            usuario.username = informacion['username']
+            usuario.first_name = informacion['first_name']
+            usuario.last_name = informacion['last_name']
             usuario.email = informacion['email']
-            usuario.password1 = informacion['password1']
-            usuario.password2 = informacion['password2']
+            #usuario.password = informacion['password1']
+            #usuario.password2 = informacion['password2']
             usuario.save()
 
             return render(request, "Accounts/index.html")
